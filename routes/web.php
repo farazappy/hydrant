@@ -16,3 +16,4 @@ Route::get('/', 'HomeController@dashboard');
 Auth::routes();
 
 Route::get('/home', 'HomeController@dashboard')->name('home');
+Route::get('/home/add-area', 'HomeController@store_area');
