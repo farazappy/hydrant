@@ -11,6 +11,7 @@
             <div class="row page-titles m-b-0">
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-themecolor">Dashboard</h3>
+                    <a href="/home/add-area">Add a new area</a>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
@@ -31,9 +32,9 @@
                                 <option selected>-- Select Area --</option>
                                 @foreach($areas as $area)
                                     @if($selectedArea == $area)
-                                        <option selected>{{ $area }}</option>
+                                        <option selected>{{ $area->area_name }}</option>
                                     @else
-                                        <option>{{ $area }}</option>
+                                        <option>{{ $area->area_name }}</option>
                                     @endif
                                 @endforeach
                             </select>
