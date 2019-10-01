@@ -33,4 +33,18 @@ class HomeController extends Controller
     {
         return view('add_area');
     }
+    public function store(Request $request)
+    {
+        //dd($request);
+        $area = new Area();
+        $area->area_name = request('name');
+        $area->save();
+        return redirect('home');
+    }
+    // private function validateRequest()
+    // {
+    //     return request()->validate([
+    //         'area_name' => 'required'
+    //     ]);
+    // }
 }
