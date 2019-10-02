@@ -52,7 +52,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -209,13 +209,14 @@
                 <!-- User profile -->
                 <div class="user-profile">
                     <!-- User profile image -->
-                    <div class="profile-img"> <img src="https://cornwallminingalliance.org/wp-content/uploads/2016/10/Placeholder-male.jpg" alt="user" />
+                    <div class="profile-img"> <img src={{ Auth::user()->image }} alt="user" />
                         <!-- this is blinking heartbit-->
                         <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
                     </div>
                     <!-- User profile text-->
                     <div class="profile-text">
-                        <h5>Hydrant Admin</h5>
+                        {{-- <h5>Hydrant Admin</h5> --}}
+                        <h5>{{ Auth::user()->name }}</h5>
                     </div>
                 </div>
                 <!-- End User profile text-->
