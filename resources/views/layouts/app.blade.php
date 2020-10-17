@@ -215,7 +215,7 @@
                     </div>
                     <!-- User profile text-->
                     <div class="profile-text">
-                        {{-- <h5>Hydrant Admin</h5> --}}
+                        <h5>Hydrant Admin</h5>
                         <h5>{{ Auth::user()->name }}</h5>
                     </div>
                 </div>
@@ -226,6 +226,7 @@
                         <li class="nav-devider"></li>
                         <li class="nav-small-cap">NAVIGATION</li>
                         <li> <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ route('add-area') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Add New Area</span></a>
                         </li>
                         <li>
                         <li><a href="{{ route('logout') }}"

@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         return view('home')->withAreas($areas)->withSelectedArea($selectedArea);
     }
-    public function store_area()
+    public function add_area()
     {
         return view('add_area');
     }

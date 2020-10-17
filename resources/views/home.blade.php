@@ -11,7 +11,7 @@
             <div class="row page-titles m-b-0">
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-themecolor">Dashboard</h3>
-                    <a href="/home/add-area">Add a new area</a>
+                    <a href="{{ route('add-area') }}">Add a new area</a>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
