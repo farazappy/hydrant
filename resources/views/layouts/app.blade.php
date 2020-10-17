@@ -93,11 +93,16 @@
                                     <li>
                                         <div class="message-center">
                                             <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Hydrant</h5> <span class="mail-desc">All Notifications will appear here.</span> <span class="time">9:30 AM</span> </div>
-                                            </a>
+                                            @foreach($notifications as $notification)
+                                                <a href="#">
+                                                    <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>{{ $notification->title }}</h5>
+                                                        <span class="mail-desc">{{ $notification->description }}</span>
+                                                        <span class="time">{{ $notification->created_at->format('h:m') }}</span>
+                                                    </div>
+                                                </a>
+                                            @endforeach
                                         </div>
                                     </li>
                                     <li>
@@ -215,7 +220,7 @@
                     </div>
                     <!-- User profile text-->
                     <div class="profile-text">
-                        {{-- <h5>Hydrant Admin</h5> --}}
+                        <h5>Hydrant Admin</h5>
                         <h5>{{ Auth::user()->name }}</h5>
                     </div>
                 </div>
@@ -226,6 +231,7 @@
                         <li class="nav-devider"></li>
                         <li class="nav-small-cap">NAVIGATION</li>
                         <li> <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{ route('add-area') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Add New Area</span></a>
                         </li>
                         <li>
                         <li><a href="{{ route('logout') }}"

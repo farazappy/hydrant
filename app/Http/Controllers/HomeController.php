@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Area;
 use App\User;
-
+use App\Notification;
 class HomeController extends Controller
 {
     /**
@@ -27,12 +27,13 @@ class HomeController extends Controller
     {
         //$areas = ['Alipore', 'Camac Street', 'JL Nehru Road', 'Kalighat', 'Kasba', 'Kona Expressway', 'New Town', 'Park Street', 'Rajarhat', 'Salt Lake City', 'Sarat Bose Road', 'Science City', 'Strand Road'];
         $areas = Area::all();
+        $notifications = Notification::all();
         // $user = Auth::user();
         $selectedArea = $request->area ? $request->area : 'Park Street';
 
-        return view('home')->withAreas($areas)->withSelectedArea($selectedArea);
+        return view('home')->withAreas($areas)->withSelectedArea($selectedArea)->withNotifications($notifications);
     }
-    public function store_area()
+    public function add_area()
     {
         return view('add_area');
     }
