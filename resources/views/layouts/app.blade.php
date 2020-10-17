@@ -93,11 +93,16 @@
                                     <li>
                                         <div class="message-center">
                                             <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>Hydrant</h5> <span class="mail-desc">All Notifications will appear here.</span> <span class="time">9:30 AM</span> </div>
-                                            </a>
+                                            @foreach($notifications as $notification)
+                                                <a href="#">
+                                                    <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
+                                                    <div class="mail-contnet">
+                                                        <h5>{{ $notification->title }}</h5>
+                                                        <span class="mail-desc">{{ $notification->description }}</span>
+                                                        <span class="time">{{ $notification->created_at->format('h:m') }}</span>
+                                                    </div>
+                                                </a>
+                                            @endforeach
                                         </div>
                                     </li>
                                     <li>
