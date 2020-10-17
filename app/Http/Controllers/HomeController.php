@@ -35,14 +35,15 @@ class HomeController extends Controller
     }
     public function add_area()
     {
-        return view('add_area');
+        $notifications = Notification::all();
+        return view('add_area')->withNotifications($notifications);
     }
     public function store(Request $request)
     {
-        //dd($request->area_name);
-        $area = new Area();
-        $area->area_name = request('area_name');
-        $area->save();
+        // dd($request->all());
+        $area_name = $request->area_name;
+        Area::create(['area_name' => $area_name]);
+
         return redirect('home');
     }
 }
