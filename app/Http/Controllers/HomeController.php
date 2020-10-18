@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Area;
 use App\User;
 use App\Notification;
+use App\Exports\AreasExport;
+use Maatwebsite\Excel\Facades\Excel;
 class HomeController extends Controller
 {
     /**
@@ -36,6 +38,7 @@ class HomeController extends Controller
     public function add_area()
     {
         $notifications = Notification::all();
+
         return view('add_area')->withNotifications($notifications);
     }
     public function store(Request $request)
@@ -43,7 +46,15 @@ class HomeController extends Controller
         // dd($request->all());
         $area_name = $request->area_name;
         Area::create(['area_name' => $area_name]);
-
+        //create a notification that an area has added
+        Notification::create([
+            'title' => 'New Area Added',
+            'description' => $area_name . ' was added'
+        ]);
         return redirect('home')->with('message', 'Area Added Successfully');
+    }
+    public function exportAreas()
+    {
+        return Excel::download(new AreasExport, 'areas.xlsx');
     }
 }
