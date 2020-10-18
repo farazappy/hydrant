@@ -238,6 +238,8 @@
                         <li> <a class="waves-effect waves-dark" href="{{ route('home') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                         <li> <a class="waves-effect waves-dark" href="{{ route('add-area') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Add New Area</span></a>
                         </li>
+                        <li> <a class="waves-effect waves-dark" href="{{ route('exportAreas') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Export Areas</span></a>
+                        </li>
                         <li>
                         <li><a href="{{ route('logout') }}"
                            onclick="event.preventDefault();

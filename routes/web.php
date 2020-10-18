@@ -18,3 +18,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@dashboard')->name('home');
 Route::get('/home/add-area', 'HomeController@add_area')->name('add-area');
 Route::post('/add-area', 'HomeController@store');
+Route::get('/export-areas', 'HomeController@exportAreas')->name('exportAreas');
