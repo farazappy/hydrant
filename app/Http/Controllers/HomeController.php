@@ -44,6 +44,6 @@ class HomeController extends Controller
         $area_name = $request->area_name;
         Area::create(['area_name' => $area_name]);
 
-        return redirect('home');
+        return redirect('home')->with('message', 'Area Added Successfully');
     }
 }
